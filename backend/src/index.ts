@@ -1,4 +1,5 @@
 import bodyParser from "body-parser";
+import cors from "cors";
 import express, { Application } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -8,6 +9,11 @@ import { LogManager } from "./utils/logManager.util";
 
 const app: Application = express();
 const PORT = 8080;
+const corsOptions = {
+  origin: ["http://localhost:4200"],
+  optionsSuccessStatus: 200,
+  credentials: true,
+};
 
 // Secure setting various HTTP headers
 app.use(helmet());
@@ -24,6 +30,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Enabling json parsing from request body
 app.use(express.json());
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 // Configuring routers
 app.use("/api", ApiRouter);
