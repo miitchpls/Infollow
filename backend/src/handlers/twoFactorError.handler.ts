@@ -3,6 +3,7 @@ import {
   AccountRepositoryLoginErrorResponseTwoFactorInfo,
   IgLoginTwoFactorRequiredError,
 } from "instagram-private-api";
+import { ErrorEnum } from "../enums/error.enum";
 import { HttpCode } from "../enums/httpCode.enum";
 import { VerificationMethod } from "../enums/verificationMethod.enum";
 
@@ -20,6 +21,7 @@ export const twoFactorErrorHandler = async (
   const verificationMethod = VerificationMethod[totp_two_factor_on ? "0" : "1"];
 
   res.status(HttpCode.FORBIDDEN).json({
+    id: ErrorEnum.twoFactorRequired,
     message: `Enter code received via ${verificationMethod}`,
     twoFactorIdentifier: two_factor_identifier,
     verificationMethod,

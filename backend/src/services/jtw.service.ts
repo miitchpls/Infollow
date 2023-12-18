@@ -6,10 +6,12 @@ const jwtOptions: SignOptions = {
   noTimestamp: true,
 };
 
-export function generateAccessToken({ seed, state }: JwtTokenPayload): string {
-  if (!process.env.TOKEN_SECRET) throw new Error("Secret token is missing!");
+const TOKEN_SECRET = "SECRET_TOKEN_4_TESTING";
 
-  return jwt.sign({ seed, state }, process.env.TOKEN_SECRET, jwtOptions);
+export function generateAccessToken({ seed, state }: JwtTokenPayload): string {
+  if (!TOKEN_SECRET) throw new Error("Secret token is missing!");
+
+  return jwt.sign({ seed, state }, TOKEN_SECRET, jwtOptions);
 }
 
 // Expected as "Bearer t0k3n"
@@ -22,7 +24,7 @@ export function authenticateToken(
   try {
     const decoded = jwt.verify(
       token,
-      process.env.TOKEN_SECRET as string
+      TOKEN_SECRET as string
     ) as JwtTokenPayload;
     return {
       seed: decoded.seed,
