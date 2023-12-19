@@ -17,7 +17,7 @@ import { AuthService } from 'src/app/shared/services/auth/auth.service';
 @Component({
   selector: 'login-page',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: [],
 })
 export class LoginComponent {
   public form: FormGroup = this.formBuilder.group({
