@@ -3,12 +3,16 @@ import cors from "cors";
 import express, { Application } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import { argv } from "node:process";
+import * as path from "path";
 import responseTime from "response-time";
 import { ApiRouter } from "./routes/api.router";
+import { MockedApiRouter } from "./routes/mocked-api.router";
 import { LogManager } from "./utils/logManager.util";
 
 const app: Application = express();
 const PORT = 8080;
+const MOCKED = argv.includes("--mocked");
 const corsOptions = {
   origin: ["http://localhost:4200"],
   optionsSuccessStatus: 200,
@@ -35,7 +39,13 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
 // Configuring routers
-app.use("/api", ApiRouter);
+if (!MOCKED) {
+  app.use("/api", ApiRouter);
+} else {
+  app.use("/assets", express.static(path.join(__dirname, "public")));
+  app.use("/api", MockedApiRouter);
+}
+
 app.get("/", (req, res) => {
   res.send("Infollow backend is running!");
 });
