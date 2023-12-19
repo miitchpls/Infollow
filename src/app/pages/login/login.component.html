@@ -1,0 +1,49 @@
+<router-outlet></router-outlet>
+<main class="color-primary flex flex-col min-h-screen w-full items-center">
+  <div class="mt-16 mb-6">
+    <div class="text-3xl font-medium">Infollow</div>
+  </div>
+  <div class="flex flex-1 w-full max-w-xl mx-auto px-8 pb-6">
+    <div class="flex flex-1">
+      <form [formGroup]="form" class="flex flex-col flex-1 w-full">
+        <div class="input" [class.invalid]="isUsernameInvalid">
+          <div class="relative">
+            <input
+              type="text"
+              id="username"
+              formControlName="username"
+              placeholder=" "
+            />
+            <label>{{ "usernamePlaceholder" | translate }}</label>
+          </div>
+          <small *ngIf="isUsernameInvalid">
+            <span class="font-medium">{{
+              "usernameRequired" | translate
+            }}</span>
+          </small>
+        </div>
+
+        <div class="input mt-4 mb-10" [class.invalid]="isPasswordInvalid">
+          <div class="relative">
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              placeholder=" "
+            />
+            <label>{{ "passwordPlaceholder" | translate }}</label>
+          </div>
+          <small *ngIf="isPasswordInvalid">
+            <span class="font-medium">{{
+              "passwordRequired" | translate
+            }}</span>
+          </small>
+        </div>
+
+        <button [disabled]="!form.enabled" (click)="login()">
+          <div class="py-[2px]">{{ "login" | translate }}</div>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>

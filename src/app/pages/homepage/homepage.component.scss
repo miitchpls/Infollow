@@ -1,0 +1,15 @@
+.text-sub {
+  @apply font-light text-slate-600;
+}
+
+.user-header {
+  @apply cursor-default flex items-center mb-0.5 space-x-2;
+}
+
+.user-link {
+  @apply flex items-center space-x-2;
+}
+
+.user-stat {
+  @apply flex items-center space-x-1;
+}

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "colors";
+@import "input";
+@import "button";
+@import "scrollbar";
+@import "ngx-toastr/toastr";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toast-container .ngx-toastr {
+  box-shadow: 0 0 12px black;
+}
+
+.skeleton {
+  @apply rounded-full bg-gray-200 dark:bg-gray-700;
+}
+
+.skeleton-light {
+  @apply rounded-full bg-gray-300 dark:bg-gray-600;
+}

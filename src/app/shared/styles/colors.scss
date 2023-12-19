@@ -1,0 +1,1116 @@
+:root {
+  // *-rgb colors are the same ones as HEX, but for use when you need to add alpha to them,
+  // eg.: `color: rgba(var(--grey-black-rgb), .5)`
+  --grey-black: #151922;
+  --grey-black-rgb: 21, 25, 34;
+  --grey-darkest: #383c43;
+  --grey-darkest-rgb: 56, 60, 67;
+  --grey-darker: #44474e;
+  --grey-darker-rgb: 68, 71, 78;
+  --grey-dark: #8a8c91;
+  --grey-dark-rgb: 138, 140, 145;
+  --grey-base: #b9babd;
+  --grey-base-rgb: 185, 186, 189;
+  --grey-light: #d0d1d3;
+  --grey-light-rgb: 208, 209, 211;
+  --grey-lighter: #e8e8e9;
+  --grey-lighter-rgb: 232, 232, 233;
+  --grey-lightest: #f8f8f8;
+  --grey-lightest-rgb: 248, 248, 248;
+  --grey-white: #fff;
+  --grey-white-rgb: 255, 255, 255;
+  --dmd-4: #282d34;
+  --dmd-4-rgb: 40, 45, 52;
+  --dmd-2: #54585f;
+  --dmd-2-rgb: 84, 88, 95;
+  --dmd-1: #95979c;
+  --dmd-1-rgb: 149, 151, 156;
+  --dml-1: #f0f2f5;
+  --dml-1-rgb: 240, 242, 245;
+  --dmd-3: #3f434a;
+  --dmd-3-rgb: 63, 67, 74;
+  --red-light: #f86e80;
+  --red-light-rgb: 248, 110, 128;
+  --dmp-1: #988fff;
+  --dmp-1-rgb: 152, 143, 255;
+  --dmg-1: #00c06d;
+  --dmg-1-rgb: 0, 192, 109;
+  --black: #000;
+  --black-rgb: 0, 0, 0;
+  --red: #f64f64;
+  --red-rgb: 246, 79, 100;
+  --pink: #f95f83;
+  --pink-rgb: 249, 95, 131;
+  --orange: #ff7e23;
+  --orange-rgb: 255, 126, 35;
+  --violet: #6c72d4;
+  --violet-rgb: 108, 114, 212;
+  --teal-base: #43a5a1;
+  --teal-base-rgb: 67, 165, 161;
+  --fair-pink: #ffece8;
+  --fair-pink-rgb: 255, 236, 232;
+  --red-danger: #f43f36;
+  --red-danger-rgb: 244, 63, 54;
+}
+
+.shadow-2 {
+  box-shadow: 0 0 0 1px #383c4312, 0 3px 6px 0 #383c4326;
+}
+
+.bg-primary {
+  background-color: var(--grey-white);
+
+  .theme-dark &,
+  &.theme-dark {
+    background-color: var(--dmd-4);
+  }
+
+  &-accent-1 {
+    background-color: var(--grey-lightest);
+
+    .theme-dark & {
+      background-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-2 {
+    background-color: var(--grey-white);
+
+    .theme-dark & {
+      background-color: var(--grey-darker);
+    }
+  }
+
+  &-accent-3 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-4 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--grey-darker);
+    }
+  }
+
+  &-accent-5 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--dmd-3);
+    }
+  }
+
+  &-accent-6 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-7 {
+    background-color: var(--grey-lightest);
+
+    .theme-dark & {
+      background-color: var(--grey-black);
+    }
+  }
+
+  &-accent-8 {
+    background-color: var(--grey-white);
+
+    .theme-dark & {
+      background-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-9 {
+    background-color: var(--grey-lightest);
+
+    .theme-dark & {
+      background-color: var(--dmd-4);
+    }
+  }
+
+  &-accent-10 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--dmd-4);
+    }
+  }
+
+  &-accent-11 {
+    background-color: var(--grey-base);
+
+    .theme-dark & {
+      background-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-12 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--grey-black);
+    }
+  }
+
+  &-accent-13 {
+    background-color: var(--grey-darkest);
+
+    .theme-dark & {
+      background-color: var(--grey-white);
+    }
+  }
+
+  &-accent-14 {
+    background-color: var(--grey-white);
+
+    .theme-dark & {
+      background-color: var(--grey-black);
+    }
+  }
+
+  &-accent-15 {
+    background-color: var(--grey-darkest);
+
+    .theme-dark & {
+      background-color: var(--grey-darker);
+    }
+  }
+
+  &-accent-16 {
+    background-color: rgba(var(--grey-lighter), 0.5);
+
+    .theme-dark & {
+      background-color: var(--grey-black);
+    }
+  }
+
+  &-accent-17 {
+    background-color: var(--grey-black);
+
+    .theme-dark & {
+      background-color: var(--grey-white);
+    }
+  }
+
+  &-accent-18 {
+    background-color: var(--grey-lighter);
+
+    .theme-dark & {
+      background-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-19 {
+    background-color: var(--grey-black);
+
+    .theme-dark & {
+      background-color: var(--dml-1);
+    }
+  }
+
+  &-accent-20 {
+    background-color: var(--grey-base);
+
+    .theme-dark & {
+      background-color: var(--dmd-1);
+    }
+  }
+
+  &-accent-21 {
+    background-color: var(--grey-lighter);
+
+    .theme-dark & {
+      background-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-22 {
+    background-color: var(--grey-light);
+
+    .theme-dark & {
+      background-color: var(--dmd-1);
+    }
+  }
+
+  &-accent-23 {
+    background-color: var(--grey-white);
+
+    .theme-dark & {
+      background-color: var(--dmd-3);
+    }
+  }
+
+  &-accent-24 {
+    background-color: var(--dml-1);
+
+    .theme-dark & {
+      background-color: var(--grey-darker);
+    }
+  }
+
+  &-accent-25 {
+    background-color: var(--grey-light);
+
+    .theme-dark & {
+      background-color: var(--grey-dark);
+    }
+  }
+}
+
+.hover\:bg-dmd2 {
+  &:hover {
+    background-color: var(--dmd-2);
+  }
+}
+
+.hover\:bg-red {
+  &:hover {
+    background-color: var(--red);
+  }
+}
+
+.hover\:bg-primary {
+  &:hover {
+    @extend .bg-primary;
+  }
+
+  &-accent-1 {
+    &:hover {
+      @extend .bg-primary-accent-1;
+    }
+  }
+
+  &-accent-2 {
+    &:hover {
+      @extend .bg-primary-accent-2;
+    }
+  }
+
+  &-accent-3 {
+    &:hover {
+      @extend .bg-primary-accent-3;
+    }
+  }
+
+  &-accent-4 {
+    &:hover {
+      @extend .bg-primary-accent-4;
+    }
+  }
+
+  &-accent-5 {
+    &:hover {
+      @extend .bg-primary-accent-5;
+    }
+  }
+
+  &-accent-6 {
+    &:hover {
+      @extend .bg-primary-accent-6;
+    }
+  }
+
+  &-accent-7 {
+    &:hover {
+      @extend .bg-primary-accent-7;
+    }
+  }
+
+  &-accent-8 {
+    &:hover {
+      @extend .bg-primary-accent-8;
+    }
+  }
+
+  &-accent-9 {
+    &:hover {
+      @extend .bg-primary-accent-9;
+    }
+  }
+
+  &-accent-10 {
+    &:hover {
+      @extend .bg-primary-accent-10;
+    }
+  }
+
+  &-accent-11 {
+    &:hover {
+      @extend .bg-primary-accent-11;
+    }
+  }
+
+  &-accent-12 {
+    &:hover {
+      @extend .bg-primary-accent-12;
+    }
+  }
+
+  &-accent-13 {
+    &:hover {
+      @extend .bg-primary-accent-13;
+    }
+  }
+
+  &-accent-14 {
+    &:hover {
+      @extend .bg-primary-accent-14;
+    }
+  }
+
+  &-accent-15 {
+    &:hover {
+      @extend .bg-primary-accent-15;
+    }
+  }
+
+  &-accent-16 {
+    &:hover {
+      @extend .bg-primary-accent-16;
+    }
+  }
+
+  &-accent-17 {
+    &:hover {
+      @extend .bg-primary-accent-17;
+    }
+  }
+
+  &-accent-18 {
+    &:hover {
+      @extend .bg-primary-accent-18;
+    }
+  }
+
+  &-accent-19 {
+    &:hover {
+      @extend .bg-primary-accent-19;
+    }
+  }
+
+  &-accent-20 {
+    &:hover {
+      @extend .bg-primary-accent-20;
+    }
+  }
+
+  &-accent-21 {
+    &:hover {
+      @extend .bg-primary-accent-21;
+    }
+  }
+
+  &-accent-22 {
+    &:hover {
+      @extend .bg-primary-accent-22;
+    }
+  }
+
+  &-accent-23 {
+    &:hover {
+      @extend .bg-primary-accent-23;
+    }
+  }
+}
+
+.bg-gradient {
+  &--velvet {
+    --gradient-start-rgb: 107, 89, 247;
+    --gradient-end-rgb: 199, 66, 216;
+    background-image: linear-gradient(
+      112deg,
+      rgba(var(--gradient-start-rgb), 1),
+      rgba(var(--gradient-end-rgb), 1)
+    );
+
+    &-rgba {
+      .theme-dark & {
+        background-image: linear-gradient(
+          112deg,
+          rgba(var(--gradient-start-rgb), 0.8),
+          rgba(var(--gradient-end-rgb), 0.8)
+        );
+      }
+    }
+  }
+
+  &--orange {
+    --gradient-start-rgb: 255, 152, 105;
+    --gradient-end-rgb: 255, 92, 102;
+    background-image: linear-gradient(
+      135deg,
+      rgba(var(--gradient-start-rgb), 1),
+      rgba(var(--gradient-end-rgb), 1)
+    );
+  }
+}
+
+.color-primary {
+  color: var(--grey-darkest);
+
+  .theme-dark & {
+    color: var(--grey-white);
+  }
+
+  &-accent-1 {
+    color: var(--grey-dark);
+
+    .theme-dark & {
+      color: var(--dmd-1);
+    }
+  }
+
+  &-accent-2 {
+    color: var(--grey-base);
+
+    .theme-dark & {
+      color: var(--grey-dark);
+    }
+  }
+
+  &-accent-3 {
+    color: var(--grey-black);
+
+    .theme-dark & {
+      color: var(--grey-white);
+    }
+  }
+
+  &-accent-4 {
+    color: var(--grey-darker);
+
+    .theme-dark & {
+      color: var(--dmd-1);
+    }
+  }
+
+  &-accent-5 {
+    color: var(--black);
+
+    .theme-dark & {
+      color: var(--grey-white);
+    }
+  }
+
+  &-accent-6 {
+    color: var(--grey-darker);
+
+    .theme-dark & {
+      color: var(--grey-white);
+    }
+  }
+
+  &-accent-7 {
+    color: var(--grey-base);
+
+    .theme-dark & {
+      color: var(--dmd-2);
+    }
+  }
+
+  &-accent-8 {
+    color: var(--grey-darker);
+
+    .theme-dark & {
+      color: var(--grey-lighter);
+    }
+  }
+
+  &-accent-9 {
+    color: var(--grey-base);
+
+    .theme-dark & {
+      color: var(--dmd-1);
+    }
+  }
+
+  &-accent-10 {
+    color: var(--grey-darkest);
+
+    .theme-dark & {
+      color: var(--grey-lightest);
+    }
+  }
+
+  &-accent-11 {
+    color: var(--dmd-2);
+
+    .theme-dark & {
+      color: var(--grey-base);
+    }
+  }
+
+  &-accent-12 {
+    color: var(--grey-white);
+
+    .theme-dark & {
+      color: var(--grey-black);
+    }
+  }
+
+  &-accent-13 {
+    color: var(--grey-darker);
+
+    .theme-dark & {
+      color: var(--dml-1);
+    }
+  }
+
+  &-accent-14 {
+    color: var(--grey-dark);
+
+    .theme-dark & {
+      color: var(--dml-1);
+    }
+  }
+
+  &-accent-15 {
+    color: var(--grey-white);
+
+    .theme-dark & {
+      color: var(--dmd-4);
+    }
+  }
+
+  &-accent-16 {
+    color: var(--grey-dark);
+
+    .theme-dark & {
+      color: var(--dmd-4);
+    }
+  }
+
+  &-accent-17 {
+    color: var(--grey-dark);
+
+    .theme-dark & {
+      color: var(--grey-base);
+    }
+  }
+}
+
+.color-grey-black {
+  color: var(--grey-black);
+}
+
+.color-grey-darker {
+  color: var(--grey-darker);
+}
+
+.hover\:color-primary {
+  &:hover {
+    @extend .color-primary;
+  }
+
+  &-accent-1 {
+    &:hover {
+      @extend .color-primary-accent-1;
+    }
+  }
+
+  &-accent-2 {
+    &:hover {
+      @extend .color-primary-accent-2;
+    }
+  }
+
+  &-accent-3 {
+    &:hover {
+      @extend .color-primary-accent-3;
+    }
+  }
+
+  &-accent-4 {
+    &:hover {
+      @extend .color-primary-accent-4;
+    }
+  }
+
+  &-accent-5 {
+    &:hover {
+      @extend .color-primary-accent-5;
+    }
+  }
+
+  &-accent-6 {
+    &:hover {
+      @extend .color-primary-accent-6;
+    }
+  }
+
+  &-accent-7 {
+    &:hover {
+      @extend .color-primary-accent-7;
+    }
+  }
+
+  &-accent-8 {
+    &:hover {
+      @extend .color-primary-accent-8;
+    }
+  }
+
+  &-accent-9 {
+    &:hover {
+      @extend .color-primary-accent-9;
+    }
+  }
+
+  &-accent-10 {
+    &:hover {
+      @extend .color-primary-accent-10;
+    }
+  }
+
+  &-accent-11 {
+    &:hover {
+      @extend .color-primary-accent-11;
+    }
+  }
+
+  &-accent-12 {
+    &:hover {
+      @extend .color-primary-accent-12;
+    }
+  }
+
+  &-accent-13 {
+    &:hover {
+      @extend .color-primary-accent-13;
+    }
+  }
+
+  &-accent-14 {
+    &:hover {
+      @extend .color-primary-accent-14;
+    }
+  }
+
+  &-accent-15 {
+    &:hover {
+      @extend .color-primary-accent-15;
+    }
+  }
+
+  &-accent-16 {
+    &:hover {
+      @extend .color-primary-accent-16;
+    }
+  }
+
+  &-accent-17 {
+    &:hover {
+      @extend .color-primary-accent-17;
+    }
+  }
+}
+
+.color-underlined-link {
+  color: var(--grey-darkest);
+
+  .theme-dark & {
+    color: var(--grey-white);
+  }
+
+  &:hover {
+    color: var(--teal-base);
+  }
+}
+
+.color-secondary {
+  color: var(--violet);
+
+  .theme-dark & {
+    color: var(--dmp-1);
+  }
+}
+
+.hover\:color-secondary {
+  &:hover {
+    color: var(--violet);
+
+    .theme-dark & {
+      color: var(--dmp-1);
+    }
+  }
+}
+
+.hover\:color-teal {
+  &:hover {
+    color: rgba(var(--teal-base-rgb), 0.5);
+  }
+}
+
+.icon-color-primary {
+  path {
+    fill: var(--grey-darker);
+
+    .theme-dark & {
+      fill: var(--grey-white);
+    }
+  }
+
+  &-accent-1 {
+    /* stylelint-disable */
+    path {
+      fill: var(--teal-base);
+
+      .theme-dark & {
+        fill: var(--dml-1);
+      }
+    }
+    /* stylelint-enable */
+  }
+
+  &-accent-2 {
+    /* stylelint-disable */
+    path {
+      fill: var(--grey-light);
+
+      .theme-dark & {
+        fill: var(--dmd-1);
+      }
+    }
+    /* stylelint-enable */
+  }
+
+  &-accent-3 {
+    /* stylelint-disable */
+    path {
+      fill: var(--grey-darker);
+
+      .theme-dark & {
+        fill: var(--grey-white);
+      }
+    }
+    /* stylelint-enable */
+  }
+}
+
+.hover\:icon-color-grey-white {
+  &:hover {
+    path {
+      fill: var(--grey-white);
+    }
+  }
+}
+
+.hover\:icon-color-primary {
+  &:hover {
+    path {
+      fill: var(--grey-black);
+
+      .theme-dark & {
+        fill: var(--grey-white);
+      }
+    }
+  }
+}
+
+.border-primary {
+  border-color: var(--grey-lighter);
+
+  .theme-dark & {
+    border-color: var(--dmd-3);
+  }
+
+  &-accent-1 {
+    border-color: var(--grey-lighter);
+
+    .theme-dark & {
+      border-color: rgba(var(--grey-dark-rgb), 0.2);
+    }
+  }
+
+  &-accent-2 {
+    border-color: var(--grey-lighter);
+
+    .theme-dark & {
+      border-color: var(--grey-darker);
+    }
+  }
+
+  &-accent-3 {
+    border-color: var(--grey-lighter);
+
+    .theme-dark & {
+      border-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-4 {
+    border-color: var(--grey-base);
+
+    .theme-dark & {
+      border-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-5 {
+    border-color: var(--grey-light);
+
+    .theme-dark & {
+      border-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-6 {
+    border-color: var(--grey-base);
+
+    .theme-dark & {
+      border-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-7 {
+    border-color: var(--grey-lighter);
+
+    .theme-dark & {
+      border-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-8 {
+    border-color: rgba(var(--grey-lighter-rgb), 0.5);
+
+    .theme-dark & {
+      border-color: var(--grey-black);
+    }
+  }
+
+  &-accent-9 {
+    border-color: var(--grey-base);
+
+    .theme-dark & {
+      border-color: var(--grey-dark);
+    }
+  }
+
+  &-accent-10 {
+    border-color: var(--dml-1);
+
+    .theme-dark & {
+      border-color: var(--grey-darkest);
+    }
+  }
+
+  &-accent-11 {
+    border-color: var(--grey-white);
+
+    .theme-dark & {
+      border-color: var(--dmd-3);
+    }
+  }
+
+  &-accent-12 {
+    border-color: var(--grey-darker);
+
+    .theme-dark & {
+      border-color: var(--grey-white);
+    }
+  }
+
+  &-accent-13 {
+    border-color: var(--grey-light);
+
+    .theme-dark & {
+      border-color: var(--dmd-2);
+    }
+  }
+
+  &-accent-14 {
+    border-color: var(--grey-white);
+
+    .theme-dark & {
+      border-color: var(--dmd-2);
+    }
+  }
+}
+
+.hover\:border-primary {
+  &:hover {
+    @extend .border-primary;
+  }
+
+  &-accent-1 {
+    &:hover {
+      @extend .border-primary-accent-1;
+    }
+  }
+
+  &-accent-2 {
+    &:hover {
+      @extend .border-primary-accent-2;
+    }
+  }
+
+  &-accent-3 {
+    &:hover {
+      @extend .border-primary-accent-3;
+    }
+  }
+
+  &-accent-4 {
+    &:hover {
+      @extend .border-primary-accent-4;
+    }
+  }
+
+  &-accent-5 {
+    &:hover {
+      @extend .border-primary-accent-5;
+    }
+  }
+
+  &-accent-6 {
+    &:hover {
+      @extend .border-primary-accent-6;
+    }
+  }
+
+  &-accent-7 {
+    &:hover {
+      @extend .border-primary-accent-7;
+    }
+  }
+
+  &-accent-8 {
+    &:hover {
+      @extend .border-primary-accent-8;
+    }
+  }
+
+  &-accent-9 {
+    &:hover {
+      @extend .border-primary-accent-9;
+    }
+  }
+
+  &-accent-10 {
+    &:hover {
+      @extend .border-primary-accent-10;
+    }
+  }
+
+  &-accent-11 {
+    &:hover {
+      @extend .border-primary-accent-11;
+    }
+  }
+
+  &-accent-12 {
+    &:hover {
+      @extend .border-primary-accent-12;
+    }
+  }
+
+  &-accent-13 {
+    &:hover {
+      @extend .border-primary-accent-13;
+    }
+  }
+
+  &-accent-14 {
+    &:hover {
+      @extend .border-primary-accent-14;
+    }
+  }
+}
+
+.shadow-primary {
+  @apply shadow-2;
+
+  .theme-dark & {
+    box-shadow: 0 2px 10px rgba(var(--black-rgb), 0.25),
+      inset 0 0 1px rgba(var(--grey-white-rgb), 0.25);
+  }
+
+  &-accent-1 {
+    @apply shadow-2;
+  }
+}
+
+.header-black {
+  color: #262628;
+
+  .theme-dark & {
+    color: var(--grey-white);
+  }
+}
+
+.bittersweet {
+  color: #ff4138;
+}
+
+.woodsmoke {
+  color: #131315;
+
+  .theme-dark & {
+    color: var(--grey-white);
+  }
+}
+
+.midGray {
+  color: #616164;
+}
+
+.frenchGray {
+  color: #bdbdc3;
+
+  .theme-dark & {
+    color: var(--grey-base);
+  }
+}
+
+.red {
+  color: var(--red);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.jade {
+  color: var(--dmg-1);
+}
+
+.bg-jade {
+  background-color: var(--dmg-1);
+}
+
+.bg-dmd4 {
+  background-color: var(--dmd-4);
+}
+
+.bg-red-rgba-10 {
+  background-color: rgba(var(--red-rgb), 0.1);
+}
+
+.bg-red-rgba-20 {
+  background-color: rgba(var(--red-rgb), 0.2);
+}
+
+.bg-red-danger {
+  background-color: var(--red-danger);
+}
+
+.border-red-rgba-25 {
+  border: 1px solid rgba(var(--red-rgb), 0.25);
+}
+
+.border-dmd2 {
+  border-color: var(--dmd-2);
+}
+
+.color-dmg1 {
+  color: var(--dmg-1);
+}

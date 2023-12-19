@@ -1,0 +1,98 @@
+<ng-container *ngIf="profile; else skeleton">
+  <navbar [username]="profile.username">
+    <div class="container mx-auto p-4 pr-1">
+      <div class="flex mb-5 w-full">
+        <img
+          [src]="profile.hd_profile_pic_url_info.url | encode | async"
+          class="skeleton w-20 h-20 rounded-full mr-7"
+          alt="propic"
+        />
+        <div>
+          <div class="user-header">
+            <div class="text-3xl color-primary-accent-13">
+              {{ profile.full_name ? profile.full_name : profile.username }}
+            </div>
+          </div>
+          <div class="flex space-x-4">
+            <div class="user-stat">
+              <div class="color-primary-accent-13">
+                {{ profile.follower_count | shortNumber }}
+              </div>
+              <div class="color-primary-accent-11">
+                {{ "followers" | translate }}
+              </div>
+            </div>
+            <div class="user-stat">
+              <div class="color-primary-accent-13">
+                {{ profile.following_count | shortNumber }}
+              </div>
+              <div class="color-primary-accent-11">
+                {{ "following" | translate }}
+              </div>
+            </div>
+          </div>
+          <div
+            [innerHTML]="profile.biography | parseUrls"
+            class="cursor-default color-primary-accent-13"
+          ></div>
+          <div
+            *ngIf="profile.external_url"
+            class="user-link color-primary-accent-13"
+          >
+            <a
+              [href]="profile.external_url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ profile.external_url }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-4"
+        *ngIf="notFollowingBack; else userListSkeleton"
+      >
+        <ng-container *ngFor="let user of notFollowingBack">
+          <user-card
+            [picture]="user.profile_pic_url"
+            [fullname]="user.full_name"
+            [username]="user.username"
+          ></user-card>
+        </ng-container>
+      </div>
+    </div>
+  </navbar>
+</ng-container>
+
+<ng-template #skeleton class="animate-pulse">
+  <navbar-skeleton>
+    <div class="container mx-auto p-4 pr-1">
+      <div class="flex mb-5 w-full">
+        <div class="skeleton w-20 h-20 mr-7"></div>
+        <div>
+          <div class="user-header">
+            <div class="skeleton w-48 h-7 mb-2.5"></div>
+          </div>
+          <div class="flex space-x-4 mb-3">
+            <div class="skeleton-light w-20 h-3.5"></div>
+            <div class="skeleton-light w-20 h-3.5"></div>
+          </div>
+          <div class="skeleton w-32 h-3.5 mb-2"></div>
+          <div class="skeleton w-24 h-3.5 mb-2"></div>
+        </div>
+      </div>
+
+      <ng-container *ngTemplateOutlet="userListSkeleton"></ng-container>
+    </div>
+  </navbar-skeleton>
+</ng-template>
+
+<ng-template #userListSkeleton>
+  <div class="grid grid-cols-1 gap-4">
+    <user-card-skeleton></user-card-skeleton>
+    <user-card-skeleton></user-card-skeleton>
+    <user-card-skeleton></user-card-skeleton>
+  </div>
+</ng-template>

@@ -1,0 +1,15 @@
+{
+  "login": "Login",
+  "usernamePlaceholder": "Username",
+  "usernameRequired": "Username is required!",
+  "passwordPlaceholder": "Password",
+  "passwordRequired": "Password is required!",
+  "not_whitelisted": "You're not whitelisted!",
+  "something_wrong": "Oops, something went wrong, please try again later. If the problem persists, please contact the administrator.",
+  "encoding_error": "Encoding error: wrong url or network error.",
+  "session_expired": "Session expired! Please log in again.",
+  "followers": "Followers",
+  "following": "Following",
+  "otp_verification": "OTP Verification",
+  "enter_code_received": "Enter the code you received at number ending by:"
+}

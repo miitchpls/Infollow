@@ -1,0 +1,33 @@
+button {
+  @apply py-2 select-none cursor-pointer
+    font-medium leading-normal text-base
+    border focus:outline-none rounded-full
+    transition-colors ease-out duration-150
+    inline-flex justify-center items-center align-bottom;
+
+  &:disabled {
+    @apply cursor-not-allowed;
+  }
+}
+
+button {
+  background-color: rgba(var(--teal-base-rgb), 0.8);
+  border-color: rgba(var(--teal-base-rgb), 0.8);
+  color: var(--grey-white);
+
+  &:hover {
+    background-color: var(--teal-base);
+    border-color: var(--teal-base);
+    color: var(--grey-white);
+  }
+
+  &:disabled {
+    @apply bg-grey-lighter border-grey-lighter;
+
+    .theme-dark & {
+      background-color: var(--grey-black);
+      border-color: var(--grey-black);
+      color: var(--dmd-2);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="flex flex-col h-screen justify-between animate-pulse">
+  <header>
+    <div class="container mx-auto flex items-center pr-1">
+      <div class="grow flex justify-center">
+        <span class="skeleton h-3 w-32"></span>
+      </div>
+      <div class="color-primary-accent-13 flex-none p-2">
+        <mat-icon class="cursor-pointer" aria-label="logout" (click)="logout()">
+          logout
+        </mat-icon>
+      </div>
+    </div>
+  </header>
+  <main class="mb-auto"><ng-content></ng-content></main>
+</div>

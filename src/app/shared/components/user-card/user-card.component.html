@@ -1,0 +1,26 @@
+<div>
+  <div class="flex items-center">
+    <img
+      class="skeleton mr-3 w-8 h-8 rounded-full shadow-lg bg-slate-200 dark:bg-slate-700"
+      [src]="picture | encode | async"
+      alt="{{ username }} propic"
+    />
+
+    <div class="grow flex flex-col">
+      <span class="color-primary-accent-13 font-semibold">
+        {{ username }}
+      </span>
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        {{ fullname }}
+      </span>
+    </div>
+    <div class="flex-none p-2">
+      <mat-icon
+        class="cursor-pointer color-primary-accent-13"
+        aria-label="open"
+        (click)="open(username)"
+        >open_in_new
+      </mat-icon>
+    </div>
+  </div>
+</div>

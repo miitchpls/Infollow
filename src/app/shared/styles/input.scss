@@ -1,0 +1,144 @@
+.input {
+  @apply relative;
+
+  input {
+    @apply block w-full
+      px-3 pb-1 pt-5
+      focus:outline-none
+      border
+      rounded-md
+      transition;
+
+    &:focus-within ~ label,
+    &:not(:placeholder-shown) ~ label {
+      @apply transform -translate-y-5 text-xs;
+    }
+    &:disabled {
+      @apply cursor-not-allowed;
+    }
+  }
+
+  label {
+    @apply text-sm font-medium
+      absolute left-3 top-1/2 -translate-y-1/2
+      pointer-events-none
+      duration-150;
+  }
+
+  small {
+    @apply text-xs my-2 mx-3;
+  }
+}
+
+.input {
+  input {
+    background-color: var(--dml-1);
+    border: 1px solid var(--dml-1);
+    color: var(--grey-darkest);
+    .theme-dark & {
+      background-color: var(--grey-black);
+      border: 1px solid var(--grey-black);
+      color: var(--grey-white);
+    }
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus-within,
+      &:focus {
+        background-color: var(--grey-white);
+        border-color: var(--grey-lighter);
+        box-shadow: 0 0 0 3px var(--dml-1);
+
+        .theme-dark & {
+          background-color: var(--grey-black);
+          border-color: var(--grey-darker);
+          box-shadow: 0 0 0 3px var(--grey-darkest);
+        }
+      }
+    }
+  }
+
+  label {
+    color: var(--grey-dark);
+    .theme-dark & {
+      color: var(--dmd-1);
+    }
+  }
+
+  input:disabled,
+  &.disabled input {
+    background-color: var(--dml-1) !important;
+    border-color: rgba(var(--grey-dark-rgb), 0.2) !important;
+    color: var(--grey-base) !important;
+
+    .theme-dark & {
+      background-color: var(--grey-darkest) !important;
+      color: var(--dmd-2) !important;
+    }
+  }
+
+  &.disabled {
+    label {
+      color: var(--grey-dark);
+      .theme-dark & {
+        color: var(--dmd-2);
+      }
+    }
+  }
+}
+
+.input.invalid {
+  input {
+    background-color: rgba(var(--red-light-rgb), 0.1);
+    border-color: rgba(var(--red-light-rgb), 0.2);
+    color: var(--grey-darkest);
+
+    .theme-dark & {
+      color: var(--grey-white);
+    }
+
+    &:not([disabled]) {
+      &:hover,
+      &:focus-within,
+      &:focus {
+        background-color: var(--grey-white);
+        border-color: rgba(var(--red-light-rgb), 0.2);
+        box-shadow: 0 0 0 3px var(--dml-1);
+        .theme-dark & {
+          background-color: var(--grey-black);
+          box-shadow: 0 0 0 3px var(--grey-darkest);
+        }
+      }
+    }
+  }
+
+  label,
+  small,
+  &.disabled {
+    color: var(--red-light);
+  }
+
+  input:disabled,
+  &.disabled input {
+    background-color: var(--dml-1);
+    border-color: rgba(var(--grey-dark-rgb), 0.2);
+    color: var(--grey-base);
+
+    .theme-dark & {
+      background-color: var(--grey-darkest);
+      color: var(--dmd-2);
+    }
+  }
+}
+
+// TODO: Should a valid state (green) be added?
+// Or do you want to keep the valid input as it is displaying just errors?
+
+// HOW TO USE IT:
+// <div class="input">
+//   <div class="relative">
+//     <input placeholder=" " />
+//     <label> My customInput </label>
+//   </div>
+//   <small> Hint </small>
+// </div>

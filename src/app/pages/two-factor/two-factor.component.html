@@ -1,0 +1,49 @@
+<div
+  class="fixed theme-dark inset-0 bg-black bg-opacity-60 transition-opacity z-[1005]"
+></div>
+
+<div class="fixed inset-0 z-[1010] overflow-y-auto">
+  <div
+    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+    [@flyInOut]
+  >
+    <div
+      class="relative transform overflow-hidden rounded-lg shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+    >
+      <div class="bg-primary-accent-14 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="flex flex-col items-center mt-3 sm:mt-0">
+          <h3 class="text-2xl font-medium leading-6 color-primary">
+            {{ "otp_verification" | translate }}
+          </h3>
+          <p
+            *ngIf="obfuscatedPhoneNumber"
+            class="flex flex-col mt-2 text-sm text-gray-500 text-center"
+          >
+            <span>{{ "enter_code_received" | translate }}</span>
+            <span class="font-bold">{{ obfuscatedPhoneNumber }}</span>
+          </p>
+          <form [formGroup]="form">
+            <div
+              id="otp"
+              formArrayName="verificationCode"
+              class="flex flex-row justify-center text-center font-semibold px-2 mt-5"
+            >
+              <ng-container *ngFor="let index of otpForm.controls; index as i">
+                <input
+                  [id]="i"
+                  type="number"
+                  maxlength="1"
+                  pattern="\d*"
+                  autocomplete="one-time-code"
+                  class="m-2 border h-10 w-10 text-center form-control rounded"
+                  [formControlName]="i"
+                  (keydown)="ensureInput($event, i)"
+                />
+              </ng-container>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
