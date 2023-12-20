@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "npx nodemon src/index.ts",
+    "start": "npx nodemon src/index.ts",
     "mock-server": "npx nodemon src/index.ts --mocked",
     "build": "npx tsc -p ."
   },

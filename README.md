@@ -13,11 +13,20 @@ The backend, powered by Express.js, relies on the [instagram-private-api](https:
 
 ## Installation
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> [!NOTE]  
+> The application is divided into two separate modules. The main folder will contain the frontend, while the backend can be found under the "backend" folder at the root of the project. Due to this dual structure, all commands, including installation and startup, must be executed twice: once for the frontend and once for the backend.
+
+#### Backend
+
+Inside the `backend` folder, run `npm i` and then `npm run start` for starting the backend, otherwise, run `npm run mock-server` if you want to launch the backend with mocked APIs.
+
+#### Frontend
+
+Run `npm i` and then `npm run start` at the root of the project. Once the server is started, the application will be accessible at the URL: `http://localhost:4200/`.
 
 ## Demo
 
-...
+No demo available.
 
 ## Authors
 
