@@ -35,11 +35,9 @@
             [innerHTML]="profile.biography | parseUrls"
             class="cursor-default color-primary-accent-13"
           ></div>
-          <div
-            *ngIf="profile.external_url"
-            class="user-link color-primary-accent-13"
-          >
+          <div *ngIf="profile.external_url" class="user-link">
             <a
+              class="underline text-cyan-600 dark:text-cyan-400"
               [href]="profile.external_url"
               target="_blank"
               rel="noopener noreferrer"
